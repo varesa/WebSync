@@ -6,9 +6,9 @@
 		//var url2 = 'http://nastori.net/ohjeet/infoa2/';
 		//var url3 = 'http://nastori.net/ohjeet/infoa3/';
 
-		var url1 = 'http://localhost/ohjeet/infoa1/';
-		var url2 = 'http://localhost/ohjeet/infoa2/';
-		var url3 = 'http://localhost/ohjeet/infoa3/';
+		//var url1 = 'http://localhost/ohjeet/infoa1/';
+		//var url2 = 'http://localhost/ohjeet/infoa2/';
+		//var url3 = 'http://localhost/ohjeet/infoa3/';
 
 
 		//var url1 = 'file:///home/pi/site/synced/index.html'
@@ -18,18 +18,49 @@
 		var delay = 10; //Sekunden
 		//------------------------------------------------------------------
 
-		function wait( callback, seconds){
-		   return window.setTimeout( callback, seconds * 1000 );
+		var list = [];
+		
+		function start_cycle() {
+			//Get urls
+			xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function() {
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					list = xmlhttp.responseText.split("\n");
+					window.setInterval(delay, change);
+					change();
+				}
+			}
+			xmlhttp.open("GET", "/urls.txt", false);
+			xmlhttp.send();
+		}
+		
+
+		x = 0;
+		
+		function change() {
+			changeTo(list[x]);
+			x++;
+			if(x == list.length) {
+				x=0;
+			}
 		}
 
-		function schleife()
-		{
-			document.getElementById('f1').src = url1;
-			wait(function(){document.getElementById('f1').src=url2;wait(function(){document.getElementById('f1').src=url3;wait(function(){schleife()},delay)},delay);},delay);
+		function changeTo(url) {
+			document.getElementById('f1').src = url;
 		}
+
+		//function wait( callback, seconds){
+		//   return window.setTimeout( callback, seconds * 1000 );
+		//}
+
+		//function schleife()
+		//{
+		//	document.getElementById('f1').src = url1;
+		//	wait(function(){document.getElementById('f1').src=url2;wait(function(){document.getElementById('f1').src=url3;wait(function(){schleife()},delay)},delay);},delay);
+		//}
 		</script>
 	</head>
-	<body onload="schleife()" bgcolor="#000000" style="margin:0px; overflow: hidden;">
+	<body onload="start_cycle()" bgcolor="#000000" style="margin:0px; overflow: hidden;">
 		<iframe id="f1" frameBorder="0" hspace="0" vspace="0" margin="0" padding="0" scrolling="no" style="border:0; overflow: hidden;" width="100%" height="100%" name="f1">
 		  <p>Ihr Browser kann leider keine eingebetteten Frames anzeigen</p>
 		</iframe>	
