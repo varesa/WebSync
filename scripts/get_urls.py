@@ -45,8 +45,7 @@ def get_matrix():
 def write_list(list):
     print(list)
     file = open("urls.txt", "w")
-    for url in list:
-        file.write(url + '\n')
+    file.write('\n'.join(list))
     file.close()
     
 id = get_id()
