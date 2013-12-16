@@ -25,7 +25,11 @@
 			xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange=function() {
 				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					list = xmlhttp.responseText.split("\n");
+					var tmp = xmlhttp.responseText.split("\n");
+					for(var i = 0; i < tmp.length; i++) {
+						list.push( "/" + tmp[i].split("/").slice(3).join("/") );
+					}
+
 					window.setInterval(delay, change);
 					change();
 				}
