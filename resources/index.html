@@ -30,7 +30,7 @@
 						list.push( "/" + tmp[i].split("/").slice(3).join("/") );
 					}
 
-					window.setInterval(delay, change);
+					window.setInterval(change, delay * 1000);
 					change();
 				}
 			}
