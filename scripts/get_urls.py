@@ -18,7 +18,7 @@ def get_pages(id):
 def write_list(list):
     print(list)
     file = open("urls.txt", "w")
-    file.write(str(''.join(list)))
+    file.write(str(''.join(list))[:-1])
     file.close()
     
 id = get_id()
