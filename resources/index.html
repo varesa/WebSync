@@ -28,11 +28,13 @@
 		x = 0;
 		
 		function change() {
-			changeTo(list[x]);
-			x++;
 			if(x == list.length) {
-				x=0;
+				location.reload();
+			} else {
+				changeTo(list[x]);
 			}
+			
+			x++;
 		}
 
 		function changeTo(url) {
