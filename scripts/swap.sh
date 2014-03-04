@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd /home/pi/site/sync
+pushd $BASEURL/sync/
 
 rm -rf current
 rm -rf alternative

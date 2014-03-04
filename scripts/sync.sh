@@ -1,7 +1,5 @@
 #!/bin/sh
 
-BASEURL=/home/pi/site
-
 rm -rf $BASEURL/sync/alternative/*
 
 while read line
