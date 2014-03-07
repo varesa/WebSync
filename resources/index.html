@@ -13,7 +13,9 @@
 				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 					var tmp = xmlhttp.responseText.split("\n");
 					for(var i = 0; i < tmp.length; i++) {
-						list.push( "/" + tmp[i].split("/").slice(3).join("/") );
+						if(tmp[i] != "") {
+							list.push( "/" + tmp[i].split("/").slice(3).join("/") );
+						}
 					}
 
 					window.setInterval(change, delay * 1000);
