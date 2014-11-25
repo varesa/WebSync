@@ -21,3 +21,4 @@ cd $BASE
 ./sync.sh 1>/dev/null
 ./modify.sh 1>/dev/null
 ./swap.sh 1>/dev/null
+./check_changes.sh 1>/dev/null
