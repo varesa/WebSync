@@ -16,6 +16,7 @@ esac
 BASE=/home/pi/site/scripts/
 cd $BASE
 
+./check_connection.py 1>/dev/null
 ./get_urls.py 1>/dev/null
 ./sync.sh 1>/dev/null
 ./modify.sh 1>/dev/null
