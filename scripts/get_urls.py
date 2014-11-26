@@ -11,7 +11,7 @@ def get_id():
 
 def get_pages(id):
     content = []
-    for line in urlopen('http://2.finbit.dy.fi:6543/get_pages/?device=' + id):
+    for line in urlopen('http://nastoris3.finbit.dy.fi/get_pages/?device=' + id):
         content.append(line.decode('UTF-8'))
     return content
 
