@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEURL=/home/pi/site
+BASEURL=/home/nastori/sync/
 
 
 current=$(md5sum $BASEURL/sync/current/* | cut -d ' ' -f 1)

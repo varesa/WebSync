@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd /home/pi/site/sync
+pushd /home/nastori/sync/sync
 
 rm -rf current
 rm -rf alternative

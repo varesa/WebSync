@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEURL=/home/pi/site
+BASEURL=/home/nastori/sync/
 
 #rm -rf $BASEURL/sync/alternative/*
 
