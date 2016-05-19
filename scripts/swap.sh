@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd /home/nastori/sync/sync
+pushd /home/nastori/sync/sync >/dev/null
 
 rm -rf current
 rm -rf alternative
@@ -15,4 +15,4 @@ else
     touch flag
 fi
 
-popd
+popd >/dev/null
