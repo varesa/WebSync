@@ -8,7 +8,7 @@ rm -rf alternative
 if [ -f flag ]; then
     ln -s dir1 ./current
     ln -s dir2 ./alternative
-    rm flag
+    rm -f flag
 else
     ln -s dir2 ./current
     ln -s dir1 ./alternative
