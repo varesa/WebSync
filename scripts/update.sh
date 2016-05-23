@@ -22,9 +22,9 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 cd $DIR
 
-./check_connection.py 
-./get_urls.py 
-./sync.sh 
-./modify.sh 
-./swap.sh 
-./check_changes.sh 
+./check_connection.py
+./get_urls.py
+./sync.sh
+./modify.sh
+./swap.sh
+./check_changes.sh
