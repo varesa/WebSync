@@ -37,8 +37,8 @@
 				location.reload();
 			} else {
 				changeTo(list[x]);
-				document.getElementsByTagName("img")[0].style.width = "100%";
-				document.getElementsByTagName("img")[0].style.height = "100%";
+				document.getElementsByTagName("iframe")[0].contentWindow.document.getElementsByTagName("img")[0].style.width = "100%";
+				document.getElementsByTagName("iframe")[0].contentWindow.document.getElementsByTagName("img")[0].style.height = "100%";
 			}
 			
 			x++;
