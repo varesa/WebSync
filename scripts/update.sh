@@ -22,11 +22,9 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 cd $DIR
 
-# Redirect all output to stderr except sync progress information.
-
-./check_connection.py 1>&2
-./get_urls.py 1>&2
-./sync.sh
-./modify.sh 1>&2
-./swap.sh 1>&2
-./check_changes.sh 1>&2
+./check_connection.py 1>/dev/null
+./get_urls.py 1>/dev/null
+./sync.sh 1>/dev/null
+./modify.sh 1>/dev/null
+./swap.sh 1>/dev/null
+./check_changes.sh 1>/dev/null
