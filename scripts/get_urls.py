@@ -19,7 +19,7 @@ def get_pages(id):
         urls = urlopen('https://nastori2.esav.fi/get_pages/?device=' + id,
                 context=ssl._create_unverified_context())
 
-    for line in urls
+    for line in urls:
         content.append(line.decode('UTF-8'))
     return content
 
